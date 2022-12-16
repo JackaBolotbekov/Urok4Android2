@@ -20,12 +20,12 @@ class MainActivity : AppCompatActivity() {
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-
         navController = navHostFragment.navController
 
         when (PreferenceHelper.showOnBoard) {
             true -> {
                 navController.navigate(R.id.noteAppFragment)
+                navController.popBackStack()
             }
             else -> {
                 navController.navigate(R.id.onBoardFragment)

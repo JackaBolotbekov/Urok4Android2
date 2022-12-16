@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#131212"
+    tools:context=".ui.fragments.detail.DetailFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_in_detail_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#131212"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <View
+            android:id="@+id/view_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_arrow_back"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/txt_date_in_detail_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#9C9C9C"
+            android:textStyle="bold"
+            tools:text="30 мая   17:21"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_finish"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:textSize="18sp"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            android:paddingHorizontal="20dp"
+            android:text="@string/finish"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine|textCapSentences"
+        android:padding="15dp"
+        android:background="@drawable/oval_color"
+        android:hint="@string/add_description"
+        android:text="@string/title_text"
+        android:textColor="@color/text_grey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_in_detail_fragment"
+        android:autofillHints="@string/add_description" />
+
+    <EditText
+        android:id="@+id/et_in_detail_fragment"
+        android:inputType="textMultiLine|textCapSentences"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="500dp"
+        android:hint="@string/hint_detail"
+        android:textColorHint="#25B1B1B1"
+        android:textColor="@color/text_grey"
+        android:paddingHorizontal="15dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title"
+        android:backgroundTint="#131212"
+        android:autofillHints=""
+        tools:ignore="TextFields" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:background="#131212"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_grey_color"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:background="@drawable/oval_color"
+                android:backgroundTint="@color/grey_card"
+                android:contentDescription="@string/todo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/constraint_layout_color" />
+
+            <ImageView
+                android:id="@+id/orange_1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/img"
+                app:layout_constraintEnd_toEndOf="@id/btn_grey_color"
+                app:layout_constraintStart_toStartOf="@id/btn_grey_color"
+                app:layout_constraintTop_toBottomOf="@id/btn_grey_color"
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_two_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_white_color"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:background="@drawable/oval_color"
+                android:backgroundTint="@color/white_card"
+                android:contentDescription="@string/todo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/constraint_two_color" />
+
+            <ImageView
+                android:id="@+id/orange_2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/img"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/btn_white_color"
+                app:layout_constraintStart_toStartOf="@id/btn_white_color"
+                app:layout_constraintTop_toBottomOf="@id/btn_white_color"
+
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_third_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_red_color"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:background="@drawable/oval_color"
+                android:backgroundTint="@color/red_card"
+                android:contentDescription="@string/todo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/constraint_third_color" />
+
+            <ImageView
+                android:id="@+id/orange_3"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/img"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/btn_red_color"
+                app:layout_constraintStart_toStartOf="@id/btn_red_color"
+                app:layout_constraintTop_toBottomOf="@id/btn_red_color"
+
+                tools:ignore="ContentDescription" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+        
+
+</androidx.constraintlayout.widget.ConstraintLayout>

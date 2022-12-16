@@ -7,23 +7,46 @@
 
     <fragment
         android:id="@+id/onBoardFragment"
-        android:name="com.example.noteapp.ui.fragments.onboard.OnBoardFragment"
+        android:name="com.example.noteapp.ui.onboard.OnBoardFragment"
         android:label="fragment_on_board"
-        tools:layout="@layout/fragment_on_board" >
+        tools:layout="@layout/fragment_on_board">
         <action
             android:id="@+id/action_onBoardFragment_to_noteAppFragment"
-            app:destination="@id/noteAppFragment"/>
+            app:destination="@id/noteAppFragment"
+            app:popUpTo="@id/action_onBoardFragment_to_noteAppFragment"
+            app:popUpToInclusive="false" />
     </fragment>
+
     <fragment
         android:id="@+id/onBoardPagerFragment2"
-        android:name="com.example.noteapp.ui.fragments.onboard.OnBoardPagerFragment"
+        android:name="com.example.noteapp.ui.onboard.OnBoardPagerFragment"
         android:label="fragment_on_board_pager"
-        tools:layout="@layout/fragment_on_board_pager" >
-    </fragment>
+        tools:layout="@layout/fragment_on_board_pager" />
+
     <fragment
         android:id="@+id/noteAppFragment"
-        android:name="com.example.noteapp.ui.fragments.home.NoteAppFragment"
+        android:name="com.example.noteapp.ui.fragments.note.NoteAppFragment"
         android:label="fragment_note_app"
-        tools:layout="@layout/fragment_note_app"/>
+        tools:layout="@layout/fragment_note_app">
+        <action
+            android:id="@+id/action_noteAppFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.noteapp.ui.fragments.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="model"
+            android:defaultValue="@null"
+            app:argType="com.example.noteapp.model.NoteModel"
+            app:nullable="true" />
+        <argument
+            android:name="modelChanged"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
 
 </navigation>

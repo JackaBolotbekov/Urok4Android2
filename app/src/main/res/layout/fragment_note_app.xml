@@ -1,8 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_fragment"
-    tools:context=".ui.fragments.home.NoteAppFragment">
-</FrameLayout>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#0E0C0C"
+    tools:context=".ui.fragments.note.NoteAppFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_in_note_app_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#131212"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/view_menu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/ic_menu"
+            android:layout_gravity="start|center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/text_grey"
+            android:textSize="20sp"
+            android:text="@string/note"
+            android:textStyle="bold"/>
+
+        <View
+            android:id="@+id/view_grid"
+            android:layout_width="24dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/shape"
+            android:layout_gravity="end|center_vertical"/>
+
+        <View
+            android:id="@+id/view_linear"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="invisible"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/ic_linear"
+            android:layout_gravity="end|center_vertical"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/oval_search"
+        android:inputType="textCapSentences"
+        android:paddingHorizontal="10dp"
+        app:iconifiedByDefault="false"
+        app:queryHint="Поиск заметок"
+        app:searchIcon="@drawable/ic_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_in_note_app_fragment" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        tools:listitem="@layout/item_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/orange"
+        android:src="@drawable/ic_add"
+        android:contentDescription="@string/todo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

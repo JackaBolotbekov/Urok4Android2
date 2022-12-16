@@ -1,4 +1,4 @@
-package com.example.noteapp.ui.fragments.onboard
+package com.example.noteapp.ui.onboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -29,7 +29,7 @@ class OnBoardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
-        setOnClickListener()
+        setUpListener()
         transition()
     }
 
@@ -38,7 +38,7 @@ class OnBoardFragment : Fragment() {
     }
 
     // Логика всех кликов
-    private fun setOnClickListener() = with(binding) {
+    private fun setUpListener() = with(binding) {
         // Клик на "Пропусить"
         skip.setOnClickListener {
             if (viewPager.currentItem < 3)
@@ -69,7 +69,7 @@ class OnBoardFragment : Fragment() {
             findNavController().navigate(R.id.action_onBoardFragment_to_noteAppFragment)
         }
         // Наш индикатор
-        TabLayoutMediator(binding.tabLayout, binding.viewPager){ tab, pos ->
+        TabLayoutMediator(binding.tabLayout, binding.viewPager){ _, _ ->
         } .attach()
     }
 

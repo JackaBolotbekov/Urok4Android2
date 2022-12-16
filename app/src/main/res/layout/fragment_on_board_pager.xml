@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#0E0C0C"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.onboard.OnBoardPagerFragment">
+    tools:context=".ui.onboard.OnBoardPagerFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_view1"
