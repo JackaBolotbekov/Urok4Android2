@@ -10,11 +10,10 @@
         android:name="com.example.noteapp.ui.onboard.OnBoardFragment"
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board">
+
         <action
-            android:id="@+id/action_onBoardFragment_to_noteAppFragment"
-            app:destination="@id/noteAppFragment"
-            app:popUpTo="@id/action_onBoardFragment_to_noteAppFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_onBoardFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
     </fragment>
 
     <fragment
@@ -47,6 +46,15 @@
             android:name="modelChanged"
             android:defaultValue="false"
             app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.noteapp.ui.onboard.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_noteAppFragment"
+            app:destination="@id/noteAppFragment" />
     </fragment>
 
 </navigation>

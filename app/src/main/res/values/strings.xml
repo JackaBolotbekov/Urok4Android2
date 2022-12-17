@@ -10,4 +10,8 @@
     <string name="finish">Готово</string>
     <string name="hint_detail">Добавьте вашу заметку</string>
     <string name="add_description">Добавьте название</string>
+    <string name="registration_text">Регистрация по номеру</string>
+    <string name="code">Получить код</string>
+    <string name="phone">+996 707 777 777</string>
+    <string name="get_code">Ваш код</string>
 </resources>

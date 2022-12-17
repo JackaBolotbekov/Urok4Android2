@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.noteapp.databinding.ItemCountBinding
 import com.example.noteapp.model.NoteModel
 
-class NoteAdapter(private val setupListener: ((NoteModel) -> Unit?)? = null)
+class NoteAdapter(private val setupListener: ((NoteModel) -> Unit?))
     : RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
 
     private var list: List<NoteModel> = ArrayList()
@@ -27,9 +27,7 @@ class NoteAdapter(private val setupListener: ((NoteModel) -> Unit?)? = null)
 
         init {
             itemView.setOnClickListener {
-                setupListener?.let {
-                    it (list[bindingAdapterPosition])
-                }
+                setupListener(list[bindingAdapterPosition])
             }
         }
     }

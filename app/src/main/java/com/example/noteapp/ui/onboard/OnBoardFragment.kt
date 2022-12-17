@@ -66,7 +66,7 @@ class OnBoardFragment : Fragment() {
         })
         // Клик на "Начать работу"
         tvStartWork.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardFragment_to_noteAppFragment)
+            findNavController().navigate(R.id.action_onBoardFragment_to_registrationFragment)
         }
         // Наш индикатор
         TabLayoutMediator(binding.tabLayout, binding.viewPager){ _, _ ->
@@ -75,7 +75,7 @@ class OnBoardFragment : Fragment() {
 
     private fun transition() {
         if (PreferenceHelper.showOnBoard){
-            findNavController().navigate(R.id.action_onBoardFragment_to_noteAppFragment)
+            findNavController().navigate(R.id.action_registrationFragment_to_noteAppFragment)
         }else {
             PreferenceHelper.showOnBoard = true
         }

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="add_description">Добавьте название</string>
+    <string name="registration_text">Регистрация по номеру</string>
+    <string name="code">Получить код</string>
+    <string name="get_code">Ваш код</string>
 </resources>

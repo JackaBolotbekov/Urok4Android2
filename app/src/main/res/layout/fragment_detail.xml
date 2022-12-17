@@ -72,20 +72,22 @@
 
     <EditText
         android:id="@+id/et_in_detail_fragment"
-        android:inputType="textMultiLine|textCapSentences"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:maxHeight="500dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:autofillHints=""
+        android:backgroundTint="#131212"
         android:hint="@string/hint_detail"
-        android:textColorHint="#25B1B1B1"
-        android:textColor="@color/text_grey"
+        android:gravity="top"
+        android:inputType="textMultiLine|textCapSentences"
+        android:maxHeight="500dp"
         android:paddingHorizontal="15dp"
+        android:textColor="@color/text_grey"
+        android:textColorHint="#25B1B1B1"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/linear_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_title"
-        android:backgroundTint="#131212"
-        android:autofillHints=""
         tools:ignore="TextFields" />
 
     <LinearLayout

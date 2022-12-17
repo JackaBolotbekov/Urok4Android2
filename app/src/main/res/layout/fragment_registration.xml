@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E0C0C"
+    tools:context=".ui.onboard.RegistrationFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/icon_registration"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_registration_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_registration_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_text"
+        android:textColor="#8E8B8B"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/linear_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon_registration" />
+
+
+    <LinearLayout
+        android:id="@+id/linear_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_the_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_registration_text">
+
+        <EditText
+            android:id="@+id/et_input_number"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/et_text_registration"
+            android:drawableStart="@drawable/ic_phone"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:inputType="phone"
+            android:drawablePadding="10dp"
+            android:hint="@string/phone"
+            android:textColorHint="#B1B1B1"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/et_input_code"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/et_text_registration"
+            android:drawableStart="@drawable/ic_mail"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:inputType="numberPassword"
+            android:drawablePadding="10dp"
+            android:hint="@string/get_code"
+            android:textColorHint="#80B1B1B1"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_get_the_code"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#D88B02"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_text_registration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_edit_text">
+
+        <TextView
+            android:id="@+id/tv_change_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/code"
+            android:textColor="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btn_access_the_code"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#D88B02"
+        app:cardCornerRadius="25dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/tv_text_registration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_edit_text">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Подтвердить"
+            android:textColor="@color/white" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tv_text_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/code"
+        android:textColor="@color/orange"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_the_code" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ import com.example.noteapp.ui.adapter.NoteAdapter
 class NoteAppFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteAppBinding
-    private var noteAdapter = NoteAdapter()
+    private var noteAdapter = NoteAdapter(this::onClickListener)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +37,6 @@ class NoteAppFragment : Fragment() {
     }
 
     private fun initialize() {
-        noteAdapter = NoteAdapter(this::onClickListener)
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = noteAdapter
